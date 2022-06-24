@@ -1,8 +1,8 @@
 package ginredoc
 
 import (
+	"github.com/LcKoh0830/go-redoc"
 	"github.com/gin-gonic/gin"
-	"github.com/mvrilo/go-redoc"
 )
 
 func New(doc redoc.Redoc) gin.HandlerFunc {

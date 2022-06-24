@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
+	"github.com/LcKoh0830/go-redoc"
 	"github.com/gorilla/mux"
-	"github.com/mvrilo/go-redoc"
 )
 
 func main() {

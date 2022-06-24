@@ -1,8 +1,8 @@
 package echoredoc
 
 import (
+	"github.com/LcKoh0830/go-redoc"
 	"github.com/labstack/echo/v4"
-	"github.com/mvrilo/go-redoc"
 )
 
 func New(doc redoc.Redoc) echo.MiddlewareFunc {

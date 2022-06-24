@@ -1,9 +1,9 @@
 package fiberredoc
 
 import (
+	"github.com/LcKoh0830/go-redoc"
 	"github.com/gofiber/adaptor/v2"
 	"github.com/gofiber/fiber/v2"
-	"github.com/mvrilo/go-redoc"
 )
 
 func New(doc redoc.Redoc) fiber.Handler {
