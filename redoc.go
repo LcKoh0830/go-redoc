@@ -9,6 +9,7 @@ import (
 	"text/template"
 
 	_ "embed"
+	"encoding/json"
 )
 
 // ErrSpecNotFound error for when spec file not found
@@ -21,6 +22,7 @@ type Redoc struct {
 	SpecFile    string
 	Title       string
 	Description string
+	Option      *RedocOption
 }
 
 // HTML represents the redoc index.html page
@@ -39,11 +41,21 @@ func (r Redoc) Body() ([]byte, error) {
 		return nil, err
 	}
 
+	var jsonOption string
+
+	if r.Option != nil {
+
+		o, _ := json.Marshal(r.Option)
+		jsonOption = string(o)
+
+	}
+
 	if err = tpl.Execute(buf, map[string]string{
 		"body":        JavaScript,
 		"title":       r.Title,
 		"url":         r.SpecPath,
 		"description": r.Description,
+		"option":      jsonOption,
 	}); err != nil {
 		return nil, err
 	}
