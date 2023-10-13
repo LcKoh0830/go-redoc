@@ -1,7 +1,8 @@
 package redoc
 
 type RedocOption struct {
-	Theme Theme `json:"theme"`
+	HideTryItPanel bool  `json:"hideTryItPanel"`
+	Theme          Theme `json:"theme"`
 }
 
 type Theme struct {
